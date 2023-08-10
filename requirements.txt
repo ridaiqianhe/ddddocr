@@ -2,3 +2,4 @@ flask
 ddddocr
 gunicorn
 gevent >= 1.4
+pillow==9.5.0
