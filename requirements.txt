@@ -1,0 +1,4 @@
+flask
+ddddocr
+gunicorn
+gevent >= 1.4
