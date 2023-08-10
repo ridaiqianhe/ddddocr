@@ -13,7 +13,7 @@ class Config(object):
 app = Flask(__name__)
 app.config.from_object(Config)
 @app.route('/ocr',methods=['GET','POST'], strict_slashes=False)
-def ocr():
+def ocrfun():
     try:
         img = req.values["img"]
         if req.values.get("old"):
@@ -23,7 +23,7 @@ def ocr():
         return {"code":-1,"msg":str(e)}
 #—————————————为api辅助参数______________
 @app.route('/slide',methods=['GET','POST'], strict_slashes=False)
-def slide():
+def slidefun():
     try:
         img,img1 = req.values["img"],req.values["img1"]
         return slide(img,img1)

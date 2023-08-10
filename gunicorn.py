@@ -3,7 +3,7 @@ import os
 from multiprocessing import cpu_count
 port = 9898
 bind = f"0.0.0.0:{port}"
-daemon = True
+# daemon = True
 workers = cpu_count()  + 1
 threads = 2
 worker_class = "gevent"
@@ -16,9 +16,9 @@ loglevel = 'error'
 reload = True
 #spew = True
 #日志级别，这个日志级别指的是错误日志的级别，而访问日志的级别无法设置
-access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s" "%({X-Real-IP}i)s"'
-accesslog = f"./logs/logs.log"      #访问日志文件
-errorlog = "./logs/error.log"  # 错误日志文件
+# access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s" "%({X-Real-IP}i)s"'
+# accesslog = f"./logs/logs.log"      #访问日志文件
+# errorlog = "./logs/error.log"  # 错误日志文件
 
 
 # -c CONFIG    : CONFIG,配置文件的路径，通过配置文件启动；生产环境使用；
