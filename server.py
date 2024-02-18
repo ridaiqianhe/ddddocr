@@ -4,7 +4,7 @@ from flask import request as req
 from ocr import ocr,slide
 #设置端口
 port = 9898
-rightkey = 'zhishuiyyds'
+rightkey = '****任意填写****'
 #—————————————为flask基础配置——————————————————————————
 class Config(object):
     DEBUG=True
