@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 from flask import Flask
 from flask import request as req
-from ocr import ocr,slide
+from ocr import ocr,slide,detection
 #设置端口
 port = 9898
 rightkey = '****任意填写****'
@@ -25,11 +25,21 @@ def ocrfun():
 @app.route('/slide',methods=['GET','POST'], strict_slashes=False)
 def slidefun():
     try:
-        img,img1 = req.values["img"],req.values["img1"]
+        img,img1 = req.values.get("img"),req.values["img1"]
+        if not img :
+            return {'code':-1,'msg':'no img'}
         return slide(img,img1)
     except Exception as e:
         return {"code":-1,"msg":str(e)}
-    
+@app.route('/detection',methods=['GET','POST'], strict_slashes=False)
+def detection():
+    try:
+        img  = req.values.get("img")
+        if not img :
+            return {'code':-1,'msg':'no img'}
+        return detection(img )
+    except Exception as e:
+        return {"code":-1,"msg":str(e)}
  
 @app.route('/ping', methods=['GET'])
 def ping():
