@@ -32,7 +32,7 @@ def slidefun():
     except Exception as e:
         return {"code":-1,"msg":str(e)}
 @app.route('/detection',methods=['GET','POST'], strict_slashes=False)
-def detection():
+def detectionfun():
     try:
         img  = req.values.get("img")
         if not img :
