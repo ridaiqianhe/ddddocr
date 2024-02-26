@@ -19,7 +19,7 @@ def slide(target_bytesb64,background_bytesb64):
 def detection(background_bytes):
     try:
         det = ddddocr.DdddOcr(det=True, ocr=False)
-        res = det.detection( background_bytes)
+        res = det.detection( base64.b64decode(background_bytes))
     except Exception as e:
         return {"code":-1,"msg":f"识别失败,原因:{str(e)}"}
     return {"code":0,"msg":"识别成功","result":res}
