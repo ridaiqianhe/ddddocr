@@ -1,11 +1,14 @@
 # ddddocr
 使用方法:
 
-git clone https://github.com/wikikk/ddddocr.git
-mkdir ddddocr
+git clone https://github.com/ridaiqianhe/ddddocr.git
 cd ddddocr
 docker build -t ocr_server:v1 .
-docker run -p 9898:9898 -d --restart=always ocr_server:v1
+docker run -p 9898:9898 -d --name  ocr --restart=always ocr_server:v1
+
+rm -r ddddocr
+docker stop ocr && docker rm ocr
+docker rmi ocr_server:v1
 
 module 'pil.image' has no attribute 'antialias' 处理方法: pip install ddddocr==9.5.0
 
